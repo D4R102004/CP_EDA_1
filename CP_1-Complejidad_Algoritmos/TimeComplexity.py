@@ -21,6 +21,15 @@ def sort_less(arr: list[T]) -> None:
         swap(arr, k, less_pos(arr, k))
 
 
-l = [1, 4, 67, 2, 4, 90]
-sort_less(l)
-print(l)
+def power(k: int, n: int):
+    if n == 0:
+        return 1
+    if n % 2 != 0:
+        return k * power(k, n - 1)
+    val = power(k, n // 2)
+    return val * val
+
+
+base = 2
+exponent = 64
+print(power(base, exponent))
